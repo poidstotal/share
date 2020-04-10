@@ -30,7 +30,6 @@ git clone git@github.com:poidstotal/sh
 
 Then error happen
 ```{ssh, echo=TRUE, eval=FALSE,results='asis'}
-git clone git@github.com:user/myrepo.git
 Cloning into 'myrepo'...
 git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
