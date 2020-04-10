@@ -1,0 +1,61 @@
+---
+title: "Integrate GitHub into your ssh_config"
+author: "Gilbert M."
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+    html_document:
+        theme: readable
+        highlight: default
+css: "sstyle.css"
+#css: "bootstrap/css/bootstrap.css"
+#javascript: "bootstrap/js/bootstrap.js"
+---
+
+```{ssh, echo=TRUE, eval=FALSE,results='asis'}
+Host github
+HostName github.com
+        User git
+        PreferredAuthentications publicly
+        IdentityFile ~/.ssh/mykeys
+
+```
+
+*** 
+If you love ssh and auomation you're probably has a custom ssh_config file that hold your screets files. But then you need to integrate github as well which may look like this
+
+```{ssh, echo=TRUE, eval=FALSE,results='asis'}
+git clone git@github.com:poidstotal/sh
+
+```
+
+Then error happen
+```{ssh, echo=TRUE, eval=FALSE,results='asis'}
+git clone git@github.com:user/myrepo.git
+Cloning into 'myrepo'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+a quick solution is to first run make sure you can ssh to other server. and then you ssh to github as well. 
+
+```{ssh, echo=TRUE, eval=FALSE,results='asis'}
+ssh github.com
+
+```
+
+
+#### The Problem (You can skip it)
+But then wehn you try to clone or connect to your repo, you receive
+```{ssh, echo=TRUE, eval=FALSE,results='asis'}
+git push origin master
+
+```
+
+
+#### Initial solution
+
+
+
+
